@@ -23,8 +23,32 @@ body{
     font-weight: 400;
     background-color: var(--white-color);
     font-family: var(--primary-font);
-    /* cursor: pointer; */
 }
+#cursor {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--black-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+  }
+  #cursor-border {
+    --size: 50px;
+    position: fixed;
+    top: calc(var(--size) / -2);
+    left: calc(var(--size) / -2);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--black-color);
+    pointer-events: none;
+    transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
+      height 0.15s ease-out, background-color 0.15s ease-out;
+    z-index: 999;
+  }
 img{
     max-width: 100%;
     display: inline-block;
@@ -56,7 +80,6 @@ span{
     margin-left: -15px;
     margin-right: -15px;
 }
-
 .items-center{
     align-items: center;
 }
@@ -228,7 +251,7 @@ span{
 }
 .backtotop{
     position: fixed;
-    z-index: 999;
+    z-index: 55;
     top: 90%;
     left: 95%;
 }
@@ -423,6 +446,19 @@ nav ul li a span{
 }
 .our-off span:hover{
     color: var(--primary-color-100);
+}
+#particles-js{
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    position: relative;
+    z-index: 1;
+}
+.particles-js-canvas-el{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 .review span{
     color: var(--primary-color-100);
